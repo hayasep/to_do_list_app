@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <a href="{{ url_for('add_task') }}">Add Task</a>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {% if task.completed %}
+                <strike>{{ task.name }}</strike>
+            {% else %}
+                {{ task.name }}
+                <a href="{{ url_for('complete_task', task_id=task.id) }}">Complete</a>
+            {% endif %}
+            <a href="{{ url_for('edit_task', task_id=task.id) }}">Edit</a>
+            <a href="{{ url_for('delete_task', task_id=task.id) }}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
