@@ -32,17 +32,20 @@ A simple to-do list application built with Flask and SQLite.
 3. **Initialize the database**:
 
    python
-   >>> from app import db
-   >>> db.create_all()
-   >>> exit()
+   
+   from app import db
+   
+   db.create_all()
+   
+   exit()
 
 
-4. **Run the application**:
+5. **Run the application**:
 
    python app.py
 
 
-5. **Open the application in your browser**:
+6. **Open the application in your browser**:
    - Navigate to `http://127.0.0.1:5000/`.
 
 
